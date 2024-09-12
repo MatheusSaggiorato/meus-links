@@ -17,7 +17,7 @@
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -26,7 +26,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: var(--white);
   letter-spacing: 2px;
-  background-image: url(/assets/images/universe.jpg);
+  background: #0c0c1a;
+  position: relative;
 }
 
 main {
@@ -118,6 +119,43 @@ li:hover .icon {
 .btn:hover,
 .icon-footer:hover {
   transform: scale(0.98);
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* Generate multiple stars with box-shadow */
+.stars:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 
+    200px 500px white, 400px 600px white, 600px 800px white,
+    100px 700px white, 900px 100px white, 1100px 300px white,
+    1200px 600px white, 1300px 700px white, 400px 200px white,
+    600px 400px white, 500px 900px white, 300px 300px white,
+    250px 1000px white, 800px 400px white, 50px 450px white,
+    550px 650px white, 750px 550px white, 950px 850px white,
+    850px 300px white, 1050px 200px white, 1250px 500px white,
+    1450px 800px white, 300px 200px white, 1600px 600px white,
+    1800px 400px white, 2000px 700px white, 2200px 100px white;
+  animation: twinkle 1s infinite alternate;
+}
+
+/* Twinkle effect */
+@keyframes twinkle {
+  0% { opacity: 0.1; }
+  100% { opacity: 1; }
 }
 
 @media screen and (max-width: 350px){
